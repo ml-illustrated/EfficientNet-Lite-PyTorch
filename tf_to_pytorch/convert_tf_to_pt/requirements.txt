@@ -1,0 +1,5 @@
+tensorflow==1.13.2
+torch
+pytest
+h5py
+astor
