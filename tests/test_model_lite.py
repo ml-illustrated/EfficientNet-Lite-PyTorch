@@ -5,13 +5,15 @@ import torch
 import torch.nn as nn
 
 from efficientnet_lite_pytorch import EfficientNet
-
+from efficientnet_lite0_pytorch_model import EfficientnetLite0ModelFile
+from efficientnet_lite1_pytorch_model import EfficientnetLite1ModelFile
 
 # -- fixtures -------------------------------------------------------------------------------------
 
-@pytest.fixture(scope='module', params=[x for x in range(4)])
+# only test lite0 and lite1
+@pytest.fixture(scope='module', params=[x for x in range(2)])
 def model(request):
-    return 'efficientnet-b{}'.format(request.param)
+    return 'efficientnet-lite{}'.format(request.param)
 
 
 @pytest.fixture(scope='module', params=[True, False])
@@ -21,7 +23,14 @@ def pretrained(request):
 
 @pytest.fixture(scope='function')
 def net(model, pretrained):
-    return EfficientNet.from_pretrained(model) if pretrained else EfficientNet.from_name(model)
+    if pretrained:
+        if model == 'efficientnet-lite0':
+            weights_path = EfficientnetLite0ModelFile.get_model_file_path()
+        elif model == 'efficientnet-lite1':
+            weights_path = EfficientnetLite1ModelFile.get_model_file_path()
+        return EfficientNet.from_pretrained(model, weights_path = weights_path )
+    else:
+        return EfficientNet.from_name(model)
 
 
 # -- tests ----------------------------------------------------------------------------------------

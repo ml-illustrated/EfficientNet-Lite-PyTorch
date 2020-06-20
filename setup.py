@@ -16,9 +16,9 @@ NAME = 'efficientnet_lite_pytorch'
 DESCRIPTION = 'EfficientNet-Lite implemented in PyTorch.'
 URL = 'https://github.com/ml-illustrated/EfficientNet-Lite-PyTorch'
 EMAIL = 'gerald@ml-illustrated.com'
-AUTHOR = 'Gerald'
+AUTHOR = 'ML Illustrated'
 REQUIRES_PYTHON = '>=3.5.0'
-VERSION = '0.6.4'
+VERSION = '0.1.0'
 
 # What packages are required for this module to be executed?
 REQUIRED = [

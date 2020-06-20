@@ -648,11 +648,6 @@ url_map = {
     'efficientnet-b5': 'https://github.com/lukemelas/EfficientNet-PyTorch/releases/download/1.0/efficientnet-b5-b6417697.pth',
     'efficientnet-b6': 'https://github.com/lukemelas/EfficientNet-PyTorch/releases/download/1.0/efficientnet-b6-c76e70fd.pth',
     'efficientnet-b7': 'https://github.com/lukemelas/EfficientNet-PyTorch/releases/download/1.0/efficientnet-b7-dcc49843.pth',
-    'efficientnet-lite0': 'file:///tmp/efficientnet-lite0-57934424.pth',
-    'efficientnet-lite1': 'file:///tmp/efficientnet-lite1-77cc7160.pth',
-    'efficientnet-lite2': 'file:///tmp/efficientnet-lite2-9656183e.pth',
-    'efficientnet-lite3': 'file:///tmp/efficientnet-lite3-fce67d86.pth',
-    'efficientnet-lite4': 'file:///tmp/efficientnet-lite4-f775d55c.pth',
 }
 
 # train with Adversarial Examples(AdvProp)

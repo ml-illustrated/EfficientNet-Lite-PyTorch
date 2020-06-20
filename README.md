@@ -1,4 +1,40 @@
-# EfficientNet PyTorch
+# EfficientNet Lite PyTorch
+
+This repository is a lightly modified version of the [original `efficientnet_pytorch` package](https://github.com/lukemelas/EfficientNet-PyTorch)
+to support Lite variants. *Disclaimer:* _The conversion of these Lite models from the
+[official Tensorflow implementation](https://github.com/tensorflow/tpu/tree/master/models/official/efficientnet/lite)
+has not been thoroughly tested!_
+
+### Installation
+
+```
+pip install efficientnet_lite_pytorch
+
+# install the pretrained model file you're interested in, e.g., lite0
+
+pip install efficientnet_lite0_pytorch_model
+```
+
+Or install from source:
+```bash
+git clone https://github.com/ml-illustrated/EfficientNet-Lite-PyTorch
+cd EfficientNet-Lite-Pytorch
+pip install -e .
+``` 
+
+
+### Sample Usage
+
+```
+from efficientnet_lite_pytorch import EfficientNet
+
+from efficientnet_lite0_pytorch_model import EfficientnetLite0ModelFile
+weights_path = EfficientnetLite0ModelFile.get_model_file_path()
+
+lite0_model = EfficientNet.from_pretrained('efficientnet-lite0', weights_path = weights_path )
+```
+
+## Original EfficientNet PyTorch README
 
 ### Quickstart 
 
